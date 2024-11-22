@@ -2,10 +2,7 @@ streamlit
 pandas
 beautifulsoup4
 opencv-python-headless
-tensorflow
-opencv
-pandas
+tensorflow==2.18.0
 numpy
-streamlit
 imutils
 requests
