@@ -1,4 +1,4 @@
-import requests
+import requests 
 import os
 import streamlit as st
 from Recipe_Generator import generate_recipe_from_ingredients
@@ -8,7 +8,7 @@ import pandas as pd
 from bs4 import BeautifulSoup  # Import BeautifulSoup for parsing HTML
 
 st.set_page_config(
-    page_title='RECIPEPIX',
+    page_title='AI BASED INGREDIENT IDENTIFIER AND RECIPE GENERATOR',
     page_icon='🍲',
     layout='wide'
 )
@@ -42,7 +42,7 @@ def save_uploaded_file(uploaded_file):
 
 
 def main():
-    st.title('RECIPEPIX!!! A RECIPE GENERATOR')
+    st.title('AI BASED INGREDIENT IDENTIFIER AND RECIPE GENERATOR')
 
     # Define menu options as a dictionary
     menu_options = {
@@ -52,9 +52,6 @@ def main():
 
     # Multiselect widget for the menu
     selected_menu = option_menu(menu_title="Options", options=list(menu_options.keys()), orientation='vertical')
-
-    st.sidebar.markdown("[Rishabh Sagar](https://www.linkedin.com/in/rishabh-sagar-1b0b74229/)", unsafe_allow_html=True)
-
 
     # Iterate over selected menu options
     for menu_item in [selected_menu]:
@@ -66,7 +63,7 @@ def main():
 
             # Check if the number of selected images is greater than the specified maximum
             if image_files and len(image_files) > 5:
-                st.warning(f"You have selected more images ({len(image_files)}) than specified ({num_images}). Only the first {num_images} images will be processed.")
+                st.warning(f"You have selected more images ({len(image_files)}) than specified (5). Only the first 5 images will be processed.")
 
             # List to store detected ingredients
             all_detected_ingredients = []
@@ -137,7 +134,6 @@ def main():
                 for i, recipe in enumerate(recipes, 1):
                     st.write(f"Recipe #{i}")
                     st.dataframe(pd.DataFrame({k: [v] for k, v in recipe.items()}).style.set_properties(**{'text-align': 'left'}), height=200)
-
 
 
 if __name__ == '__main__':

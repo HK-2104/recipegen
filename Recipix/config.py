@@ -1,5 +1,5 @@
 # MODEL = "C:/Users/Lenovo/Videos/Project/RECIPE GENERATOR/Recipix/MobileNet.h5"
-MODEL = "C:/Users/Lenovo/Videos/Project/RECIPE GENERATOR/Jupyter/mobileNet.keras"
+MODEL = "C:/Users/hemuk/Desktop/MAD/RECIPIX---A-Recipe-Generator/Jupyter/mobileNet.keras"
 
 API_KEY = '0d174a31c7a6434ab589f79316b02a83'
 
